@@ -1,0 +1,18 @@
+.pic {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .pic img {
+    width: 500px;
+    margin: 30px 0;
+  }
+  
+  .address {
+    margin: 10px 40px;
+  }
+  
+  .address h4 {
+    text-decoration: underline;
+  }
