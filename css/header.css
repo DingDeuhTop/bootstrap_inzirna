@@ -1,0 +1,46 @@
+#header {
+    padding: 10px;
+}
+
+.header-content {
+    margin: 0 auto;
+    background-color: #e1e1e1;
+  }
+  
+  
+  #header_image p {
+    margin: 0 10px;
+  }
+  
+  #header_image img {
+    width: 60px;
+    height: 60px;
+    float: left;
+  }
+  
+  #header_text {
+    margin: 16px auto;
+  }
+  
+  #header_text input {
+    margin-right: 5px;
+  }
+  
+  .header-text {
+    margin: 10px 60px;
+  }
+  
+  .text-2 {
+    font-weight: bold;
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+    max-width: 1700px !important;
+  }
+
+  #header_text{
+    display: flex;
+  }
+
