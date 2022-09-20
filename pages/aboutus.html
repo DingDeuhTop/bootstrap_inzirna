@@ -18,120 +18,138 @@
   <body>
     <div class="header">
       <div class="header-content">
-        <div class="container">
-          <div id="header_image">
-            <div class="img">
-              <img src="../img/logo.png" alt="logo" />
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <div class="container">
+            <div id="header_image">
+              <div class="img">
+                <img src="../img/logo.png" class="img-fluid" alt="logo" />
+              </div>
+              <div class="header-text d-none d-sm-block">
+                <p class="text-1">Presbyterian Church of India</p>
+                <p class="text-2">Mizoram Synod</p>
+              </div>
             </div>
-            <div class="header-text">
-              <p class="text-1">Presbyterian Church of India</p>
-              <p class="text-2">Mizoram Synod</p>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul
+                class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center"
+              >
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/aboutus.html">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Deptt./Comt.</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Media ministry</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Counselling</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Prayer Request</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Letter</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Gallery</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-primary" type="submit">Search</button>
+              </form>
             </div>
           </div>
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Deptt./Comt.</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Media ministry</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Counselling</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Prayer Request</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Letter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Gallery</a>
-            </li>
-          </ul>
-          <div id="header_text">
-            <input type="text" class="form-control" placeholder="search" />
-            <button type="button" class="btn btn-light">Search</button>
+        </nav>
+      </div>
+      <div class="container position-relative overflow-hidden p-lg-5 mx-auto my-5">
+        <div class="row">
+          <div class="pic">
+            <div class="card mod" style="width: 500px">
+              <img src="../img/mod.jpg" alt="pic" />
+            </div>
+            <div class="card sr" style="width: 500px">
+              <img src="../img/sr.jpg" alt="pic" />
+            </div>
+            <div class="card sec" style="width: 500px">
+              <img src="../img/ex.jpg" alt="pic" />
+            </div>
+            <div class="card sec" style="width: 500px">
+              <img src="../img/exsec.jpg" alt="pic" />
+            </div>
+          </div>
+        </div>
+        <div class="address">
+          <h4>Address:</h4>
+          <p>Synod Office</p>
+          <p>Mission Veng, Aizawl</p>
+          <p>Mizoram, India</p>
+          <div class="phone">
+            <p>91 0389 2326372/2322285;</p>
+            <p>2335821 (EP ABX) Fax(2322132)</p>
+          </div>
+          <div class="mail">contact@mizoramsynod.org</div>
+
+          <div class="request">
+            <p>Enquiry:</p>
+            <form action="#">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                value="Name"
+                placeholder="Enter Name"
+              />
+              <br />
+              <input
+                type="text"
+                class="form-control"
+                id="mail"
+                value="Email"
+                placeholder="Enter Email"
+              />
+              <br />
+              <textarea
+                class="form-control"
+                name="message"
+                id="meassage"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <br />
+              <button type="submit" class="btn btn-primary" value="submit">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>
 
-      
-          <div class="container">
-            <div class="row">
-              <div id="contact_us col-6">
-                <div class="pic">
-                  <div class="card mod" style="width:500px">
-                    <img src="../img/mod.jpg" alt="pic" />
-                  </div>
-                  <div class="card sr" style="width:500px">
-                    <img src="../img/sr.jpg" alt="pic" />
-                  </div>
-                  <div class="card sec" style="width:500px">
-                    <img src="../img/ex.jpg" alt="pic" />
-                  </div>
-                  <div class="card sec" style="width:500px">
-                    <img src="../img/exsec.jpg" alt="pic" />
-                  </div>
-                </div>
-              </div>
-              <div class="address col-6">
-                <h4>Address:</h4>
-                <p>Synod Office</p>
-                <p>Mission Veng, Aizawl</p>
-                <p>Mizoram, India</p>
-                <div class="phone">
-                  <p>91 0389 2326372/2322285;</p>
-                  <p>2335821 (EP ABX) Fax(2322132)</p>
-                </div>
-                <div class="mail">contact@mizoramsynod.org</div>
-      
-                <div class="request">
-                  <p>Enquiry:</p>
-                  <form action="#">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      value="Name"
-                      placeholder="Enter Name"
-                    />
-                    <br />
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="mail"
-                      value="Email"
-                      placeholder="Enter Email"
-                    />
-                    <br />
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      id="meassage"
-                      cols="30"
-                      rows="10"
-                    ></textarea>
-                    <br />
-                    <button type="submit" class="btn btn-primary" value="submit">
-                      Submit
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-      <div id="footer">
+      <div class="footer mt-5">
         <div class="container">
           <div class="footer-container">
-            <div id="footer-content">
-              <div class="footer-contact">
+            <div class="row footer-content">
+              <div class="footer-contact col-sm-12 col-md-4">
                 <p>Contact Us</p>
                 <hr />
                 <div class="text" id="footer-text">
@@ -141,7 +159,7 @@
                   <p>contact@mizoramsynod.org</p>
                 </div>
               </div>
-              <div class="links">
+              <div class="links col-sm-12 col-md-4">
                 <p>Useful Links</p>
                 <hr />
                 <div id="usefullink">
@@ -173,7 +191,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="tawngtai">
+              <div class="tawngtai col-sm-12 col-md-4">
                 <p>Tawngtai Thupui</p>
                 <hr />
                 <div id="footer-tawngtai">
@@ -185,18 +203,18 @@
                 </div>
               </div>
             </div>
-            <div class="footer-copyright">
+            <div class="row footer-copyright">
               <hr />
-              <div class="logo">
+              <div class="logo col-sm-12 col-md-6">
                 <div class="img">
-                  <img src="../img/logo.png" alt="logo" />
+                  <img src="img/logo.png" alt="logo" />
                 </div>
                 <div class="logo-text">
                   <p>Presbyterian Church of India</p>
                   <p>Mizoram Synod</p>
                 </div>
               </div>
-              <div class="footer-text">
+              <div class="footer-text col-sm-12 col-md-6">
                 <p>Content Maintained and Updated by</p>
                 <p>Synod Information & Publicity Department (Synfo)</p>
                 <p>Copyright &copy; Mizoram Synod. All Right Reserved</p>

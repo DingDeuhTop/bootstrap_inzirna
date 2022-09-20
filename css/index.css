@@ -26,6 +26,11 @@
   text-decoration: none;
 }
 
+.news-content .card{
+  width: 300px;
+  margin: 0 auto;
+}
+
 .update .row .card {
   padding: 10px;
 }
