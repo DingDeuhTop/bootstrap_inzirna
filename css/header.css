@@ -29,6 +29,10 @@
   .header-text {
     margin: 10px 60px;
   }
+
+  #header_text{
+    display: flex;
+  }
   
   .text-2 {
     font-weight: bold;
@@ -37,10 +41,7 @@
   .container{
     display: flex;
     align-items: center;
-    max-width: 1700px !important;
+    max-width: 1500px !important;
   }
 
-  #header_text{
-    display: flex;
-  }
 
