@@ -62,3 +62,11 @@
     text-align: right;
   }
 
+  @media (max-width: 575.98px) {
+    .footer .footer-container{
+      text-align: center;
+    }
+    .footer .footer-text{
+      text-align: center;
+    }
+  }
