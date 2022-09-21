@@ -6,30 +6,13 @@
   font-family: sans-serif;
 }
 
-.quote a {
-  text-decoration: none;
-  border-radius: 3px;
-  color: #9999a3;
-}
-.quote {
-  background-color: #ffffff;
-  color: #4a4a5e;
-  font-size: 30px;
-  font-style: italic;
-  position: absolute;
-  width: 500px;
-  margin: 0 280px;
-  padding-left: 10px;
-}
-
 .card a {
   text-decoration: none;
 }
 
-.news-content .card{
-  width: 300px;
-  margin: 0 auto;
-}
+/* .news-content .card{
+  width: 400px;
+} */
 
 .update .row .card {
   padding: 10px;
@@ -41,4 +24,26 @@
 
 .news-content .update .row .card {
   align-items: center;
+}
+
+.periodical-documents .row .card{
+  height: 50px;
+  margin: 10px ;
+  text-align: center;
+  justify-content: center;
+}
+
+.notification .card{
+  width: 600px;
+  margin: 10px;
+}
+
+.notification .see-all{
+  width: 250px;
+}
+
+@media (max-width: 575.98px) {
+  .card-text{
+    font-size: 12px;
+  }
 }
