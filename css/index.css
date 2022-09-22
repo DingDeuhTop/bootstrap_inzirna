@@ -1,4 +1,4 @@
-.text-content #box {
+/* .text-content #box {
   text-transform: capitalize;
   text-align: center;
   width: 100%;
@@ -36,7 +36,7 @@
 
 .notification .see-all{
   width: 250px;
-}
+} */
 
 @media (max-width: 575.98px) {
   .card-text{

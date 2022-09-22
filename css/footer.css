@@ -1,72 +1,17 @@
- .footer {
-    width: 100%;
-    padding: 20px 0;
-    float: left;
-    background-color: #2e2c2a;
-    color: #ffffff;
-  }
-  
-  #footer-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 0 20px;
-  }
-  
-  #usefullink ul {
-    list-style: none;
-    line-height: 30px;
-    padding-left: 0;
-  }
-  
-  #usefullink ul a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-  }
-  
-  #usefullink ul a:hover {
-    text-decoration: underline;
-    color: rgb(92, 85, 3);
-  }
-  
-  .footer-copyright {
-    margin: 0 30px;
-  }
-  
-  .footer-container {
-    width: 1800px;
-    margin: 0 auto;
-  }
-  
-  .logo {
-    float: left;
-    width: 600px;
-  }
-  
-  .logo img {
-    width: 60px;
-    height: auto;
-    float: left;
-  }
-  
-  .logo-text {
-    margin: 0 40px;
-  }
-  
-  .logo-text p {
-    margin: 10px 38px;
-  }
-  
-  .footer-text {
-    /* float: right; */
-    text-align: right;
+.footer-text {
+  /* float: right; */
+  text-align: right;
+}
+
+@media (max-width: 575.98px) {
+  .footer .footer-container {
+    text-align: center;
   }
 
-  @media (max-width: 575.98px) {
-    .footer .footer-container{
-      text-align: center;
-    }
-    .footer .footer-text{
-      text-align: center;
-    }
+  .footer .footer-container .logo-wrapper-text p{
+    text-align: center;
   }
+  .footer .footer-text {
+    text-align: center;
+  }
+}
