@@ -25,43 +25,75 @@
   <body>
     <div class="container">
       <div class="row">
-          <div id="result"></div>
-        Value 1:
-        <input class="col-6 form-control" type="text" id="value1" /> Value 2:
+        <p>
+          The Result is:
+          <span id="result"></span>
+        </p>
+        <label for="value2">value 1:</label>
+        <input class="col-6 form-control" type="text" id="value1" />
+        <label for="value2">value 2:</label>
         <input class="col-6 form-control" type="text" id="value2" />
       </div>
 
       Operator:
-      <select class="form-select" id="operator">
+      <!-- <select class="form-select" id="operator">
         <option value="add">Add</option>
         <option value="min">Minus</option>
         <option value="mul">Multiply</option>
         <option value="div">Divide</option>
-      </select>
-      <button class="btn" type="button" onclick="calc()">Calculate</button>
+      </select> -->
+      <div class="pt-3">
+        <button class="btn btn-secondary" onclick="add()">Add</button>
+        <button class="btn btn-secondary" onclick="sub()">Subtract</button>
+        <button class="btn btn-secondary" onclick="div()">Divide</button>
+        <button class="btn btn-secondary" onclick="mul()">Multiply</button>
+      </div>
     </div>
 
-
     <script>
-      var a, b, op, calculate;
+      // var a, b, op, calculate;
 
-      function calc() {
-        a = parseFloat(document.querySelector("#value1").value);
-        b = parseFloat(document.querySelector("#value2").value);
-        op = document.querySelector("#operator").value;
+      // function calc() {
+      //   a = parseFloat(document.querySelector("#value1").value);
+      //   b = parseFloat(document.querySelector("#value2").value);
+      //   op = document.querySelector("#operator").value;
 
-        if (op == "add") {
-          calculate = a + b;
-        } else if (op == "min") {
-          calculate = a - b;
-        } else if (op == "mul") {
-          calculate = a * b;
-        } else if (op == "div") {
-          calculate = a / b;
-        }
-        console.log(calculate);
+      //   if (op == "add") {
+      //     calculate = a + b;
+      //   } else if (op == "min") {
+      //     calculate = a - b;
+      //   } else if (op == "mul") {
+      //     calculate = a * b;
+      //   } else if (op == "div") {
+      //     calculate = a / b;
+      //   }
+      //   console.log(calculate);
 
-        document.querySelector("#result").innerHTML = calculate;
+      //   document.querySelector("#result").innerHTML = calculate;
+      // }
+
+      function add() {
+        value1 = document.getElementById("value1").value;
+        value2 = document.getElementById("value2").value;
+        document.getElementById("result").innerHTML = parseFloat(value1) + parseFloat(value2);
+      }
+
+      function sub() {
+        value1 = document.getElementById("value1").value;
+        value2 = document.getElementById("value2").value;
+        document.getElementById("result").innerHTML = parseFloat(value1) - parseFloat(value2);
+      }
+
+      function div() {
+        value1 = document.getElementById("value1").value;
+        value2 = document.getElementById("value2").value;
+        document.getElementById("result").innerHTML = parseFloat(value1) / parseFloat(value2);
+      }
+
+      function mul() {
+        value1 = document.getElementById("value1").value;
+        value2 = document.getElementById("value2").value;
+        document.getElementById("result").innerHTML = parseFloat(value1) * parseFloat(value2);
       }
     </script>
   </body>
