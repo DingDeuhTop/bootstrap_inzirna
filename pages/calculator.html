@@ -22,56 +22,201 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <div class="container">
-        <div id="output"></div>
-      <div class="row buttons">
-        <button class="btn col-6 cell clear">C</button>
-        <button class="btn col-6 cell result">=</button>
-        <button class="btn col-3 cell">7</button>
-        <button class="btn col-3 cell">8</button>
-        <button class="btn col-3 cell">9</button>
-        <button class="btn col-3 cell operation">%</button>
-        <button class="btn col-3 cell">4</button>
-        <button class="btn col-3 cell">5</button>
-        <button class="btn col-3 cell">6</button>
-        <button class="btn col-3 cell operation">+</button>
-        <button class="btn col-3 cell">1</button>
-        <button class="btn col-3 cell">2</button>
-        <button class="btn col-3 cell">3</button>
-        <button class="btn col-3 cell operation">*</button>
-        <button class="btn col-3 cell operation">/</button>
-        <button class="btn col-3 cell">0</button>
-        <button class="btn col-3 cell">.</button>
-        <button class="btn col-3 cell">-</button>
+  <body onload="clear()">
+    <main>
+      <div class="card container align-items-center">
+        <div class="row justify-content-center g-3">
+          <div id="result"></div>
+          <button class="btn btn-secondary col-3" id="btn_AC">AC</button>
+          <button class="btn btn-secondary col-3" id="btn_posneg">+/-</button>
+          <button class="btn btn-secondary col-3" id="btn_percent">%</button>
+          <button class="btn btn-secondary col-3" id="btn_divide" value="/">
+            &divide;
+          </button>
+
+          <button class="btn btn-secondary col-3" id="btn_7">7</button>
+          <button class="btn btn-secondary col-3" id="btn_8">8</button>
+          <button class="btn btn-secondary col-3" id="btn_9">9</button>
+          <button class="btn btn-secondary col-3" id="btn_multiply" value="*">
+            &times;
+          </button>
+
+          <button class="btn btn-secondary col-3" id="btn_4">4</button>
+          <button class="btn btn-secondary col-3" id="btn_5">5</button>
+          <button class="btn btn-secondary col-3" id="btn_6">6</button>
+          <button class="btn btn-secondary col-3" id="btn_subtract" value="-">
+            -
+          </button>
+
+          <button class="btn btn-secondary col-3" id="btn_1">1</button>
+          <button class="btn btn-secondary col-3" id="btn_2">2</button>
+          <button class="btn btn-secondary col-3" id="btn_3">3</button>
+          <button class="btn btn-secondary col-3" id="btn_add" value="+">
+            +
+          </button>
+
+          <button class="btn btn-secondary col-3" id="btn_0">0</button>
+          <button class="btn btn-secondary col-3" id="btn_decimal">.</button>
+          <button class="btn btn-secondary col-3" id="btn_equals">=</button>
+        </div>
       </div>
-    </div>
+    </main>
+
     <script>
-      let output = document.getElementById("output");
+      var currentValue = 0;
+      var newOperation = "";
+      var newValue = 0;
 
-      let cells = Array.from(document.getElementsByClassName("cell"));
-      cells.map((cell) => {
-          cell.addEventListener("click", (e) => {
-            console.log('click');
-          switch (e.target.innerText) {
-            case "C":
-              output.innerText = "";
-              break;
+      function clear() {
+        currentValue = 0;
+        newValue = 0;
 
-            case "=":
-              // Funzione di gestione degli errori;
-              try {
-                output.innerText = eval(output.innerText);
-              } catch {
-                output.innerText = "Error!";
-              }
-              break;
+        document.getElementById("result").innerHTML = currentValue;
+      }
 
-            default:
-              output.innerText += e.target.innerText;
-          }
-        });
+      function posNeg() {
+        newValue = newValue * -1;
+
+        document.getElementById("result").innerHTML = newValue;
+      }
+
+      function percent() {
+        if (newValue) {
+          newValue = newValue / 100;
+
+          document.getElementById("result").innerHTML = newValue;
+        } else {
+          currentValue = currentValue / 100;
+          document.getElementById("result").innerHTML = currentValue;
+        }
+      }
+
+      function newNum(pressed) {
+        if (newValue == 0) {
+          newValue += pressed;
+        } else {
+          newValue = newValue.toString();
+          newValue = newValue + pressed;
+
+          newValue = parseFloat(newValue);
+        }
+        document.getElementById("result").innerHTML = newValue;
+      }
+
+      function newCalc(pressed) {
+        if (!currentValue) {
+          currentValue = newValue;
+        } else if (newValue) {
+          equals();
+        }
+
+        newOperation = pressed;
+        newValue = 0;
+      }
+
+      function decimal() {
+        if (Number.isInteger(newValue) == true) {
+          newValue = newValue.toString();
+          newValue = newValue + ".";
+        }
+        document.getElementById("result").innerHTML = newValue;
+      }
+
+      function equals() {
+        newValue = parseFloat(newValue);
+
+        switch (newOperation) {
+          case "/":
+            currentValue = currentValue / newValue;
+            break;
+          case "*":
+            currentValue = currentValue * newValue;
+            break;
+          case "-":
+            currentValue = currentValue - newValue;
+            break;
+          case "+":
+            currentValue = currentValue + newValue;
+            break;
+        }
+        currentValue = parseFloat(currentValue);
+        newValue = 0;
+        document.getElementById("result").innerHTML = currentValue;
+      }
+      document.getElementById("btn_AC").addEventListener("click", function () {
+        clear();
       });
+      document
+        .getElementById("btn_posneg")
+        .addEventListener("click", function () {
+          posNeg();
+        });
+      document
+        .getElementById("btn_percent")
+        .addEventListener("click", function () {
+          percent();
+        });
+
+      document
+        .getElementById("btn_divide")
+        .addEventListener("click", function () {
+          newCalc(this.value);
+        });
+      document
+        .getElementById("btn_multiply")
+        .addEventListener("click", function () {
+          newCalc(this.value);
+        });
+      document
+        .getElementById("btn_subtract")
+        .addEventListener("click", function () {
+          newCalc(this.value);
+        });
+      document.getElementById("btn_add").addEventListener("click", function () {
+        newCalc(this.value);
+      });
+
+      document.getElementById("btn_0").addEventListener("click", function () {
+        newNum(0);
+      });
+      document.getElementById("btn_1").addEventListener("click", function () {
+        newNum(1);
+      });
+      document.getElementById("btn_2").addEventListener("click", function () {
+        newNum(2);
+      });
+      document.getElementById("btn_3").addEventListener("click", function () {
+        newNum(3);
+      });
+      document.getElementById("btn_4").addEventListener("click", function () {
+        newNum(4);
+      });
+      document.getElementById("btn_5").addEventListener("click", function () {
+        newNum(5);
+      });
+      document.getElementById("btn_6").addEventListener("click", function () {
+        newNum(6);
+      });
+      document.getElementById("btn_7").addEventListener("click", function () {
+        newNum(7);
+      });
+      document.getElementById("btn_8").addEventListener("click", function () {
+        newNum(8);
+      });
+      document.getElementById("btn_9").addEventListener("click", function () {
+        newNum(9);
+      });
+
+      document
+        .getElementById("btn_decimal")
+        .addEventListener("click", function () {
+          decimal();
+        });
+      document
+        .getElementById("btn_equals")
+        .addEventListener("click", function () {
+          equals();
+        });
     </script>
   </body>
 </html>
