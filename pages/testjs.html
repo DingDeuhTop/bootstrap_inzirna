@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div id="test">
+      <input id="output" type="text" disabled />
+    </div>
+    <button class="numberButton" value="1">1</button>
+    <button class="numberButton" value="2">2</button>
+    <button class="opButton" id="opButton" value="+">+</button>
+    <button class="opButton" id="opButton1" value="-">-</button>
+    <button id="calculate" value="=">=</button>
+  </body>
+  <script>
+    let output = 0;
+    let input1 = "";
+    let input2 = "";
+    let operation = null;
+
+    const assignNumber = function (event) {
+      if (output != 0) {
+        output = 0;
+        operation = null;
+        document.getElementById("opButton").removeAttribute("disabled");
+        document.getElementById("opButton1").removeAttribute("disabled");
+      }
+      if (operation == null) {
+        input1 += event.target.value;
+        setOutput(input1);
+      } else {
+        input2 += event.target.value;
+        setOutput(input2);
+      }
+    };
+    const setOperation = function (event) {
+      if (operation !== null) {
+        return;
+      }
+      lastOperator = event.target;
+      operation = event.target.value;
+      event.target.disabled = true;
+    };
+
+    const calculate = function () {
+      input1 = parseInt(input1);
+      input2 = parseInt(input2);
+
+      switch (operation) {
+        case "+":
+          output = input1 + input2;
+          break;
+        case "-":
+          output = input1 - input2;
+          break;
+      }
+      setOutput(output);
+      input1 = "";
+      input2 = "";
+    };
+
+    const setOutput = function (string) {
+      document.getElementById("output").value = string;
+    };
+
+    const numberButtons = document.getElementsByClassName("numberButton");
+    for (let i = 0; i < numberButtons.length; i++) {
+      numberButtons[i].addEventListener("click", assignNumber);
+    }
+    const opButtons = document.getElementsByClassName("opButton");
+    for (let i = 0; i < opButtons.length; i++) {
+      opButtons[i].addEventListener("click", setOperation);
+    }
+    document.getElementById("calculate").addEventListener("click", calculate);
+  </script>
+</html>

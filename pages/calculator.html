@@ -24,7 +24,7 @@
   </head>
   <body onload="clear()">
     <main>
-      <div class="card container align-items-center">
+      <div class="container align-items-center">
         <div class="row justify-content-center g-3">
           <div id="result"></div>
           <button class="btn btn-secondary col-3" id="btn_AC">AC</button>
@@ -63,7 +63,7 @@
     </main>
 
     <script>
-      var currentValue = 0;
+      var currentValue = "";
       var newOperation = "";
       var newValue = 0;
 
@@ -71,7 +71,7 @@
         currentValue = 0;
         newValue = 0;
 
-        document.getElementById("result").innerHTML = currentValue;
+        document.getElementById("result").innerHTML = newValue;
       }
 
       function posNeg() {
@@ -96,7 +96,7 @@
           newValue += pressed;
         } else {
           newValue = newValue.toString();
-          newValue = newValue + pressed;
+          newValue += pressed;
 
           newValue = parseFloat(newValue);
         }
