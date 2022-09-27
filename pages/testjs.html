@@ -14,6 +14,8 @@
     <button class="numberButton" value="2">2</button>
     <button class="opButton" id="opButton" value="+">+</button>
     <button class="opButton" id="opButton1" value="-">-</button>
+    <button class="opButton" id="opButton2" value="*">&times; </button>
+    <button class="opButton" id="opButton3" value="/">&divide;</button>
     <button id="calculate" value="=">=</button>
   </body>
   <script>
@@ -28,6 +30,8 @@
         operation = null;
         document.getElementById("opButton").removeAttribute("disabled");
         document.getElementById("opButton1").removeAttribute("disabled");
+        document.getElementById("opButton2").removeAttribute("disabled");
+        document.getElementById("opButton3").removeAttribute("disabled");
       }
       if (operation == null) {
         input1 += event.target.value;
@@ -56,6 +60,12 @@
           break;
         case "-":
           output = input1 - input2;
+          break;
+        case "*":
+          output = input1 * input2;
+          break;
+        case "/":
+          output = input1 / input2;
           break;
       }
       setOutput(output);
