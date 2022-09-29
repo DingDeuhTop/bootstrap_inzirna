@@ -34,6 +34,9 @@
           $("ol").append("<li>" + toAdd + "</li>");
           console.log(toAdd)
         });
+        $(document).on('dblclick','li', function(){
+          $(this).toggleClass('strike').fadeOut('slow')
+        })
       });
     </script>
   </body>
