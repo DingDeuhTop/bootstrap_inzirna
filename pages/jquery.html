@@ -16,38 +16,32 @@
   <body>
     <div class="container">
       <div type="text" id="display"></div>
-      <div class="row">
-        <button class="btn col-3 my-2 btn-primary number">1</button>
-        <button class="btn col-3 my-2 btn-primary number">2</button>
-        <button class="btn col-3 my-2 btn-primary number">3</button>
-        <button class="btn col-3 my-2 btn-primary number">4</button>
-        <button class="btn col-3 my-2 btn-primary number">5</button>
-        <button class="btn col-3 my-2 btn-primary number">6</button>
-        <button class="btn col-3 my-2 btn-primary number">7</button>
-        <button class="btn col-3 my-2 btn-primary number">8</button>
-        <button class="btn col-3 my-2 btn-primary number">9</button>
-        <button class="btn col-3 my-2 btn-primary number">0</button>
-        <button class="btn col-3 my-2 btn-primary number">.</button>
-        <button class="btn col-3 my-2 btn-primary operators">+</button>
-        <button class="btn col-3 my-2 btn-primary operators">-</button>
-        <button class="btn col-3 my-2 btn-primary operators">*</button>
-        <button class="btn col-3 my-2 btn-primary operators">/</button>
-        <button class="btn col-3 my-2 btn-primary" id="clear">AC</button>
-        <button class="btn col-3 my-2 btn-primary" id="equal">=</button>
+      <div class="row"></div>
+        <button class="btn btn-primary number">1</button>
+        <button class="btn btn-primary number">2</button>
+        <button class="btn btn-primary number">3</button>
+        <button class="btn btn-primary number">4</button>
+        <button class="btn btn-primary number">5</button>
+        <button class="btn btn-primary number">6</button>
+        <button class="btn btn-primary number">7</button>
+        <button class="btn btn-primary number">8</button>
+        <button class="btn btn-primary number">9</button>
+        <button class="btn btn-primary number">0</button>
+        <button class="btn btn-primary number">.</button>
+        <button class="btn btn-primary operators">+</button>
+        <button class="btn btn-primary operators">-</button>
+        <button class="btn btn-primary operators">*</button>
+        <button class="btn btn-primary operators">/</button>
+        <button class="btn btn-primary" id="clear">AC</button>
+        <button class="btn btn-primary" id="equal">=</button>
       </div>
     </div>
     <script>
       $(document).ready(function () {
-        let exp = [];
         var num_1 = 0;
         var num_2 = 0;
         var operator = "";
         var displayOutput = $("#display");
-        // if(displayOutput = 0){
-        //   displayOutput.text = '0'
-        // }else{
-        //   displayOutput.text = num_1
-        // }
         displayOutput.text("0");
 
         $(".number").click(function () {
@@ -89,12 +83,13 @@
           } else if (operator == "*") {
             answer = num_1 * num_2;
           } else if (operator == "/") {
-            answer = num_1 / num2;
+            answer = num_1 / num_2;
           }
           console.log(answer, "ans");
           $("#display").text(answer);
         });
         $("#clear").click(function () {
+          console.log("text")
           $("#display").text("0");
         });
       });
