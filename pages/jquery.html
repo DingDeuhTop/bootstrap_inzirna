@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="table">
+      <div class="table container">
         <div type="text" id="display"></div>
         <button type="button" class="btn btn-primary number">1</button>
         <button type="button" class="btn btn-primary number">2</button>
@@ -28,57 +28,71 @@
         <button type="button" class="btn btn-primary number">9</button>
         <button type="button" class="btn btn-primary number">0</button>
         <button type="button" class="btn btn-primary number">.</button>
-        <button type="button" class="btn btn-primary" id="operator">+</button>
-        <button type="button" class="btn btn-primary" id="operator">-</button>
-        <button type="button" class="btn btn-primary" id="operator">*</button>
-        <button type="button" class="btn btn-primary" id="operator">/</button>
+        <button type="button" class="btn btn-primary operators">+</button>
+        <button type="button" class="btn btn-primary operators">-</button>
+        <button type="button" class="btn btn-primary operators">*</button>
+        <button type="button" class="btn btn-primary operators">/</button>
         <button type="button" class="btn btn-primary" id="clear">AC</button>
         <button type="button" class="btn btn-primary" id="equal">=</button>
       </div>
     </div>
     <script>
       $(document).ready(function () {
+        let exp = [];
         var num_1 = 0;
         var num_2 = 0;
-        var operation = "";
+        var operator = "";
         var displayOutput = $("#display");
+        // if(displayOutput = 0){
+        //   displayOutput.text = '0'
+        // }else{
+        //   displayOutput.text = num_1
+        // }
         displayOutput.text("0");
+
         $(".number").click(function () {
           var num = $(this).text();
           $("#display").append(num);
-          console.log('num1',num);
+          console.log("enter number", num);
         });
 
-        $("#operator").click(function () {
+        $(".operators").click(function () {
           if ($("#display").text != "") {
             num_1 = $("#display").text();
-            num_1 = parseInt(num_1);
-            operation = $(this).text();
-            $("#display").append(operation);
-            console.log(operation);
+            num_1 = parseFloat(num_1);
+            operator = $(this).text();
+            console.log("operation is", operator);
+            $("#display").append(operator);
           }
         });
-        $("#equal").click(function () {
-          num_2 = $("#display").text().split("").reverse().join("");
-          num_2 = parseInt(num_2);
-          num_2 = num_2.toString();
-          num_2 = num_2.split("").reverse().join("");
 
-          num_2 = parseInt(num_2);
+        $("#equal").click(function () {
+          let operands = $("#display").text().split(operator);
+
+          console.log("operands is: ", operands);
+
+          console.log(operands[1]);
+          num_2 = parseFloat(operands[1]);
+          console.log(operator);
+          // num_2 = num_2.split(operator).reverse().join("");
+
+          // num_2 = parseFloat(num_2);
 
           var answer = "Error!";
-          if (operation == "+") {
+
+          if (operator == "+") {
+            console.log("here");
+            console.log("numbers are: ", num_1, num_2);
             answer = num_1 + num_2;
-          } else if (operation == "-") {
+          } else if (operator == "-") {
             answer = num_1 - num_2;
-          } else if (operation == "*") {
+          } else if (operator == "*") {
             answer = num_1 * num_2;
-          } else if (operation == "/") {
+          } else if (operator == "/") {
             answer = num_1 / num2;
           }
-          $("#display").empty();
-          $("#display").append(answer);
-          console.log(answer, 'asnwe')
+          console.log(answer, "ans");
+          $("#display").text(answer);
         });
         $("#clear").click(function () {
           $("#display").text("0");
