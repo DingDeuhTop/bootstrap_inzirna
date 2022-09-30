@@ -13,16 +13,11 @@
   </head>
   <body>
     <div class="container">
-      <h2>Simple To Do List</h2>
-      <p>
-        <em>Click and drag to reorder, double click to cross an item off.</em>
-      </p>
+      <h3>Test Input</h3>
 
-      <form name="toDoList">
+
         <input id="inputText" type="text" name="ListItem" />
-      </form>
-
-      <button id="button">Add</button>
+        <button id="button">Add</button>
       <br />
       <ol id="display"></ol>
     </div>
@@ -30,9 +25,9 @@
     var inputText = ''
       $(document).ready(function () {
         $("#button").click(function () {
-          var toAdd = $("#inputText").val();
-          $("ol").append("<li>" + toAdd + "</li>");
-          console.log(toAdd)
+          var addItem = $("#inputText").val();
+          $("ol").append("<li>" + addItem + "</li>");
+          console.log(addItem)
         });
         $(document).on('dblclick','li', function(){
           $(this).toggleClass('strike').fadeOut('slow')
