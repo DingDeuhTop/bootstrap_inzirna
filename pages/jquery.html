@@ -44,11 +44,20 @@
         var operator = "";
         var displayOutput = $("#display");
         displayOutput.text("0");
+     
 
         $(".number").click(function () {
           var num = $(this).text();
-          $("#display").append(num);
-          console.log("enter number", num);
+          const display = $("#display")
+          //initial value check if it's zero or numbers
+          //click velah btn value in display nghalna
+          if(display.text() == 0){
+            display.text(num)
+            console.log(display, "asd")
+          }else
+          display.append(num);
+
+          // console.log("enter number", num);
         });
 
         $(".operators").click(function () {
